@@ -14,8 +14,7 @@ pipeline {
          }
         stage('Notify Slack') {
             steps {
-                     sh ''' 
-                     set +x
+                     sh '''
                      curl -X POST 'https://hooks.slack.com/services/$CHANNEL/$SECRET/$TOKEN' -H 'content-type: application/json' -d '{"text": "Jenkins build passed :grin:"}'
                      '''
                   }
