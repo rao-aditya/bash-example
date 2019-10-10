@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        CHANNEL = credentials('channel')
-        SECRET  = credentials('secret')
-        TOKEN   = credentials('token')
+        CHANNEL = credentials('1-channel')
+        SECRET  = credentials('2-secret')
+        TOKEN   = credentials('3-token')
     }
     stages {
         stage('Run Script') {
