@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        CHANNEL = credentials('1-channel')
-        SECRET  = credentials('2-secret')
-        TOKEN   = credentials('3-token')
+        CHANNEL = credentials('channel')
+        SECRET  = credentials('secret')
+        TOKEN   = credentials('token')
     }
     stages {
         stage('Run Script') {
@@ -14,7 +14,8 @@ pipeline {
          }
         stage('Notify Slack') {
             steps {
-                     sh '. notify.sh' 
+                     sh 'chmod +x notify.sh'
+                     sh './notify.sh' 
                   }
          }
     }
